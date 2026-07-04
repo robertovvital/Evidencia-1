@@ -53,13 +53,3 @@ halcon-repo/
 └── frontend/       # (to be implemented in the next deliverable)
 ```
 
-## How to Publish This Repository on GitHub
-```bash
-cd halcon-repo
-git init
-git add .
-git commit -m "Deliverable 1: analysis, methodology and diagrams for the Halcon project"
-git branch -M main
-git remote add origin https://github.com/<your-username>/halcon-web.git
-git push -u origin main
-```
