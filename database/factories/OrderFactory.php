@@ -16,7 +16,7 @@ class OrderFactory extends Factory
         $status = fake()->randomElement(array_keys(Order::STATUSES));
 
         return [
-            'invoice_number'    => 'INV-' . $invoice,
+            'invoice_number'    => 'INV-' . str_pad((string) $invoice, 4, '0', STR_PAD_LEFT),
             'customer_name'     => fake()->company(),
             'customer_number'   => 'CUST-' . fake()->unique()->numberBetween(100, 9999),
             'fiscal_data'       => fake()->company() . "\nRFC: " . strtoupper(fake()->bothify('???######???')) . "\n" . fake()->address(),

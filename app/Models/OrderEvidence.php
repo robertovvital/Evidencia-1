@@ -10,6 +10,8 @@ class OrderEvidence extends Model
 {
     use HasFactory;
 
+    protected $table = 'order_evidences';
+
     public const TYPE_ROUTE     = 'route';
     public const TYPE_DELIVERED = 'delivered';
 

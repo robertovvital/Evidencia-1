@@ -31,7 +31,7 @@ class OrderSeeder extends Seeder
             ]);
 
             if (in_array($sample['status'], [Order::STATUS_IN_ROUTE, Order::STATUS_DELIVERED])) {
-                OrderEvidence::create([
+                OrderEvidence::query()->create([
                     'order_id'    => $order->id,
                     'type'        => OrderEvidence::TYPE_ROUTE,
                     'photo_path'  => 'evidences/sample-route.jpg',
@@ -40,7 +40,7 @@ class OrderSeeder extends Seeder
             }
 
             if ($sample['status'] === Order::STATUS_DELIVERED) {
-                OrderEvidence::create([
+                OrderEvidence::query()->create([
                     'order_id'    => $order->id,
                     'type'        => OrderEvidence::TYPE_DELIVERED,
                     'photo_path'  => 'evidences/sample-delivered.jpg',
