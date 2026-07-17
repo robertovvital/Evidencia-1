@@ -1,0 +1,43 @@
+/* ---------- Halcon dashboard stylesheet ---------- */
+/* Dashboard summary cards and quick links */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.dashboard-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    padding: 1.25rem;
+    display: grid;
+    gap: 0.35rem;
+}
+
+.dashboard-card__count {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.dashboard-card__label {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    font-weight: 600;
+}
+
+.dashboard-card--new {
+    border-style: dashed;
+    border-color: #8aa7cf;
+    background: linear-gradient(180deg, #f8fbff 0%, #edf4fb 100%);
+}
+
+.dashboard-card a,
+.dashboard-card a:hover {
+    text-decoration: none;
+}

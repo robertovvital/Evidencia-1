@@ -1,0 +1,26 @@
+/* ---------- Halcon users stylesheet ---------- */
+/* Users module additions */
+
+.user-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.user-status--active {
+    background: #ddf5e7;
+    color: #236f43;
+}
+
+.user-status--inactive {
+    background: #f5e0e0;
+    color: #8d3535;
+}
+
+.department-select {
+    max-width: 360px;
+}
