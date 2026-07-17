@@ -36,7 +36,7 @@
 - Start the app with `php artisan serve`.
 - Default login: `admin@halcon.com` / `admin123`.
 
-## Evidence 3 - Frontend (Native CSS)
+## Deliverable 3 - Frontend (Native CSS)
 
 This evidence adds native CSS styling on top of the existing Evidence 2 logic, using plain CSS only with no CSS framework.
 
