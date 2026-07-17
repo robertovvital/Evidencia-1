@@ -35,3 +35,42 @@
 - Run `php artisan storage:link` so evidence photos are accessible under `/storage/evidences/...`.
 - Start the app with `php artisan serve`.
 - Default login: `admin@halcon.com` / `admin123`.
+
+## Evidence 3 - Frontend (Native CSS)
+
+This evidence adds native CSS styling on top of the existing Evidence 2 logic, using plain CSS only with no CSS framework.
+
+### CSS files created
+- `public/css/app.css` - shared design tokens, base layout, navbar, page shell, buttons, forms, tables, status badges and utility helpers.
+- `public/css/auth.css` - all styling for the guest/public search screen and the employee login card, including the result block for invoice lookup.
+- `public/css/dashboard.css` - responsive dashboard card grid for the summary links and the dashed "add new" variant.
+- `public/css/users.css` - small user-module additions, including active/inactive pills and the department select width helper.
+- `public/css/orders.css` - order-specific evidence photo grid and the highlighted conditional upload field for status changes.
+
+Global/shared styles live in `app.css`, while the other files only add page-specific rules on top of that shared visual system.
+
+### Evidence 2 logic remains intact
+- Models: `Department`, `User`, `Order`, `OrderEvidence` with their relationships are still present and unchanged in this delivery.
+- Migrations: the four primary tables with their keys and constraints remain in place.
+- Controllers: `Home`, `Auth\Login`, `Dashboard`, `User`, `Order`, and `ArchivedOrder` remain unchanged in behavior.
+- Seeders / factories: department, admin + demo user, and sample order data remain intact.
+- Basic views: dashboard, users, orders, archived orders, and the public search/login views remain in place and still drive the same flows.
+
+### How to run this project
+- Clone the repository and open the project folder.
+- Copy `.env.example` to `.env` if it is not already present.
+- Run `composer install` to install the PHP dependencies.
+- Run `php artisan key:generate` to generate the app key.
+- Configure the database connection for this project. The current repository setup uses SQLite, so the expected `.env` values are:
+  - `DB_CONNECTION=sqlite`
+  - `DB_DATABASE=database/database.sqlite`
+  - If you prefer MySQL instead, update `DB_CONNECTION`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` accordingly.
+- Ensure the SQLite file exists, then run `php artisan migrate:fresh --seed` to rebuild the schema and load the sample data.
+- Run `php artisan storage:link` so the order evidence photos can be served from `public/storage`.
+- Start the application with `php artisan serve`.
+- Seeded login credentials:
+  - Admin: `admin@halcon.com` / `admin123`
+  - Sales: `sales@halcon.com` / `password`
+  - Purchasing: `purchasing@halcon.com` / `password`
+  - Warehouse: `warehouse@halcon.com` / `password`
+  - Route: `route@halcon.com` / `password`
